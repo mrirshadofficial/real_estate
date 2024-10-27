@@ -1,0 +1,90 @@
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class RealEstateManagementSystem {
+    // Property class to represent real estate properties
+    static class Property {
+        private String id;
+        private String address;
+        private double price;
+
+        public Property(String id, String address, double price) {
+            this.id = id;
+            this.address = address;
+            this.price = price;
+        }
+
+        @Override
+        public String toString() {
+            return "Property ID: " + id + ", Address: " + address + ", Price: Rs." + price + " only/-";
+        }
+    }
+
+    // List to manage properties
+    private List<Property> properties;
+
+    public RealEstateManagementSystem() {
+        properties = new ArrayList<>();
+    }
+
+    // Method to add a property
+    public void addProperty(String id, String address, double price) {
+        properties.add(new Property(id, address, price));
+    }
+
+    // Method to display all properties
+    public void displayProperties() {
+        if (properties.isEmpty()) {
+            System.out.println("No properties available.");
+            return;
+        }
+        System.out.println("Properties:");
+        for (Property property : properties) {
+            System.out.println(property);
+        }
+    }
+
+    // Main method to run the application
+    public static void main(String[] args) {
+        RealEstateManagementSystem system = new RealEstateManagementSystem();
+        Scanner scanner = new Scanner(System.in);
+        String choice;
+
+        do {
+            System.out.println("Real Estate Management System");
+            System.out.println("1. Add Property");
+            System.out.println("2. View Properties");
+            System.out.println("3. Exit");
+            System.out.print("Choose an option: ");
+            choice = scanner.nextLine();
+
+            switch (choice) {
+                case "1":
+                    System.out.print("Enter Property ID: ");
+                    String id = scanner.nextLine();
+                    System.out.print("Enter Property Address: ");
+                    String address = scanner.nextLine();
+                    System.out.print("Enter Property Price: ");
+                    double price = Double.parseDouble(scanner.nextLine());
+                    system.addProperty(id, address, price);
+                    System.out.println("Property added successfully.");
+                    break;
+
+                case "2":
+                    system.displayProperties();
+                    break;
+
+                case "3":
+                    System.out.println("Exiting...");
+                    break;
+
+                default:
+                    System.out.println("Invalid option. Please try again.");
+            }
+
+        } while (!choice.equals("3"));
+
+        scanner.close();
+    }
+}
