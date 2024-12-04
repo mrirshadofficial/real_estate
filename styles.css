@@ -1,0 +1,60 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #4CAF50;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+main {
+  padding: 1rem;
+}
+
+.search-section {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.search-section input {
+  padding: 0.5rem;
+  width: 200px;
+}
+
+.search-section button {
+  padding: 0.5rem;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.search-section button:hover {
+  background-color: #45a049;
+}
+
+.property-list {
+  margin-top: 1rem;
+}
+
+.property-card {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.property-card h3 {
+  margin: 0;
+  color: #333;
+}
+
+.property-card p {
+  margin: 0.5rem 0;
+}
